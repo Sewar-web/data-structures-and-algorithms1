@@ -9,14 +9,3 @@
 
 
 
-import math
-def shiftArray[arr,val]: 
-length=len(arr) 
-if length2==0:
-index==int(length/2) 
-newarr=arr[:index]+[val]+arr[index:]
-if length&2==1:
-x=int(length/2) 
-index=math.ceil(x)+1 
-newarr=arr[:index]+[val]+arr[index:]
-return newarr
