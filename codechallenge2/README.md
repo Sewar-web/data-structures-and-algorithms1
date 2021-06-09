@@ -5,3 +5,4 @@ Write a function called insertShiftArray which takes in an array and a value to 
 ![alt](code2.png)
 
 # Approach and efficient
+    create new array to add the new value to it it has linear time complexity and constant space complexity

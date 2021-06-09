@@ -5,3 +5,4 @@ Write a function called BinarySearch which takes in 2 parameters: a sorted array
 ![alt](codecha3.png)
 
 # Approach and efficient
+    Approach binary search its required by the reuirements its more effeicient and has time efficient time compexity
