@@ -5,4 +5,4 @@ Write a function called reverseArray which takes an array as an argument. Withou
 ![alt](codechallenge1.png)
 
 # Approach and efficient
-    this way it the most efficient way to reverse  array and it faster
+    this way it the most efficient way to reverse  array and it faster 
