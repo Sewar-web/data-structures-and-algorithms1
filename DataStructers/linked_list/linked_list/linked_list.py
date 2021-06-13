@@ -27,9 +27,11 @@ class LinkedList:
         node = Node(value)
         if not self.head:
             self.head=node
+           
         else:
            node.next= self.head
            self.head = node
+          
 
         
 
@@ -40,11 +42,13 @@ class LinkedList:
         node = Node(value)
         if not self.head:
             self.head = node
+           
         else:
             current = self.head
             while current.next != None:
                 current = current.next
             current.next = node
+           
 
 
 
@@ -68,13 +72,75 @@ class LinkedList:
                 else:
                     return False
 
-
-           
-
-
+    def insertAfter(self,value,newVal):
+        current = self.head
+        while current is not None:
+            if value==current.value:
+                break
+            current = current.next
+        if current is None:
+            raise ValueError("node is not presesnt in LL")
+        else:
+            node = Node(newVal)
+            node.next = current.next
+            current.next = node
         
-        
+    def insertBefore(self,value,newVal):
+        if self.head is None:
+            raise ValueError("Linked List is empty!")
+        if self.head.value==value:
+            node = Node(newVal)
+            node.next = self.head
+            self.head = node
+            return
+        current = self.head
+        while current.next is not None:
+            print(current.next.value)      
+            if current.next.value == value:
+                break
+            current = current.next  
+        if current.next is None:
+            raise ValueError("Node is not found!")
+        else:
+            node = Node(newVal)
+            node.next = current.next
+            current.next = node     
+
+      
+    # def insertBefore(self,value, newVal):
+    #     try:
+    #         node = Node(newVal)
+    #         current = self.head
+    #         if(current.value == value):
+    #             LinkedList.insert(self,newVal)
+    #             return
+    #         while(current.next.value != value):
+    #             current = current.next
+    #         a = current.next
+    #         current.next=node
+    #         node.next = a
+    #     except TypeError:
+    #         return f'please enter a proper type'
+    #     except:
+    #         return f"the value {value} does not exist in this instance"
     
+    # def insertAfter(self,value, newVal):
+    #     try:
+    #         node = Node(newVal)
+    #         current = self.head
+    #         while(True):
+    #             if(current.value == value):
+    #                 a = current.next
+    #                 current.next = node
+    #                 node.next = a
+    #                 break
+    #             current = current.next
+    #     except:
+    #         return f"the value {value} does not exist in this instance"
+
+
+        
+ 
     def __str__(self):
         # "{ a } -> { b } -> { c } -> NULL"
         # Loop over all nodes
@@ -95,7 +161,8 @@ class LinkedList:
     def __repr__(self):
         pass
 
-    
+
+
 
 
 if __name__ == "__main__":
@@ -111,6 +178,7 @@ if __name__ == "__main__":
     ll.insert(7)
     ll.append(5)
     ll.append(-1)
+    ll.insertAfter(2,5)
     
 
     print(ll.include(-1))
