@@ -105,40 +105,6 @@ class LinkedList:
             node = Node(newVal)
             node.next = current.next
             current.next = node     
-
-      
-    # def insertBefore(self,value, newVal):
-    #     try:
-    #         node = Node(newVal)
-    #         current = self.head
-    #         if(current.value == value):
-    #             LinkedList.insert(self,newVal)
-    #             return
-    #         while(current.next.value != value):
-    #             current = current.next
-    #         a = current.next
-    #         current.next=node
-    #         node.next = a
-    #     except TypeError:
-    #         return f'please enter a proper type'
-    #     except:
-    #         return f"the value {value} does not exist in this instance"
-    
-    # def insertAfter(self,value, newVal):
-    #     try:
-    #         node = Node(newVal)
-    #         current = self.head
-    #         while(True):
-    #             if(current.value == value):
-    #                 a = current.next
-    #                 current.next = node
-    #                 node.next = a
-    #                 break
-    #             current = current.next
-    #     except:
-    #         return f"the value {value} does not exist in this instance"
-
-
         
  
     def __str__(self):
@@ -178,7 +144,8 @@ if __name__ == "__main__":
     ll.insert(7)
     ll.append(5)
     ll.append(-1)
-    ll.insertAfter(2,5)
+    ll.insertAfter(7,9)
+    ll.insertBefore(7,9)
     
 
     print(ll.include(-1))
