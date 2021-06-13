@@ -51,3 +51,28 @@ def test_str_it():
     ll.append(1)
     assert str(ll) == '{5}->{3}->{1}->None'
 
+
+
+def test_insertafter():
+    ll = LinkedList()
+    ll.append(1)
+    ll.append(2)
+    ll.append(2)
+    ll.insertAfter(2, 5)
+    assert ll.head.next.next.value == 5
+    ll.insertAfter(1, 3)
+    assert ll.head.next.value == 3
+
+def test_insertbefor():
+    ll = LinkedList()
+    ll.append(1)
+    ll.append(2)
+    ll.append(2)
+    ll.insertBefore(1, 5)
+    assert ll.head.next.value == 1
+    ll.insertBefore(2, 3)
+    assert ll.head.next.next.value == 3
+
+
+
+
