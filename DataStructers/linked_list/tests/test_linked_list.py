@@ -76,3 +76,17 @@ def test_insertbefor():
 
 
 
+def test_getNth():
+    ll = LinkedList()
+    assert ll.getNth(1) == 'out of range'
+    ll.append(2)
+    assert ll.getNth(1) == 'out of range'
+    ll.getNth(0) == 3
+    ll.append(7)
+    ll.insert('hjl')
+    ll.append(8)
+    assert ll.getNth(2) == 2
+    assert ll.getNth(3) == 'hjl'
+    assert ll.getNth(6) == 'out of range'
+    assert ll.getNth(-1) == 'hjl'
+
