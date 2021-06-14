@@ -1,5 +1,5 @@
 ## Whiteboard Process
-![img](code6.png)
+![img](code07.png)
 
 ## Approach & Efficiency
 the big o for insertion before and after for time is O(n) space O(1)
