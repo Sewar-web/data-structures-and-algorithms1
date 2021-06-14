@@ -145,7 +145,7 @@ if __name__ == "__main__":
     ll.append(5)
     ll.append(-1)
     ll.insertAfter(7,9)
-    ll.insertBefore(7,9)
+    ll.insertBefore (7,9)
     
 
     print(ll.include(-1))
