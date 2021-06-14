@@ -105,8 +105,29 @@ class LinkedList:
             node = Node(newVal)
             node.next = current.next
             current.next = node     
-        
+
+
+    
+
+    def getNth (self,value):
+        try:
+            current = self.head
+            valuesarr = []
+            while(current.next != None):
+                valuesarr.append(current.value)
+                current = current.next
+            else:
+                valuesarr.append(current.value)
+            valuesarr.reverse()
+            return valuesarr[value]
+        except:
+            return 'out of range'
+
+
+
  
+
+
     def __str__(self):
         # "{ a } -> { b } -> { c } -> NULL"
         # Loop over all nodes
@@ -136,23 +157,19 @@ if __name__ == "__main__":
     n1 = Node(35)
     n2 = Node('Sewar')
     n3 = Node(True)
+    
     # print(n2.value)
-
+    
 
     ll = LinkedList()
     ll.append(4)
     ll.insert(7)
     ll.append(5)
     ll.append(-1)
-    ll.insertAfter(7,9)
-    ll.insertBefore (7,9)
-    
-
-    print(ll.include(-1))
-    
-
+    print(ll.getKth(0))
+    # ll.insertAfter(7,9)
+    # ll.insertBefore (7,9)
     print(str(ll))
-
 
     print(ll.head.value)
     print(ll.head.next.value)
