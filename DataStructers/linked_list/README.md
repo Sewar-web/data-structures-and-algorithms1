@@ -2,21 +2,15 @@
 ![img](se.png)
 
 ## Approach & Efficiency
-the big o for insertion before and after for time is O(n) space O(1)
+the big o for  function  getNth  for time is O(n) and  space O(n)
 
 ## Solution
-i run it by test this tow method 
-ll=linkedlist
-ll.append(1)
-ll.append(2)
-ll.append(3)
-ll.insetafter(2,5)
-1 -2 -5-3
-
+i run it by test this method 
 
 ll=linkedlist
 ll.append(1)
 ll.append(2)
 ll.append(3)
-ll.insetbefor(2,5)
-1 -5 -2-3
+ll.getNth(2) output=>1
+ll.getNth(0) output=>3
+
