@@ -26,14 +26,11 @@ class LinkedList:
         """
         node = Node(value)
         if not self.head:
-            self.head=node
-           
-        else:
-           node.next= self.head
-           self.head = node
-          
+            self.head = node
 
-        
+        else:
+            node.next = self.head
+            self.head = node
 
     def append(self, value):
         """
@@ -42,15 +39,12 @@ class LinkedList:
         node = Node(value)
         if not self.head:
             self.head = node
-           
+
         else:
             current = self.head
             while current.next != None:
                 current = current.next
             current.next = node
-           
-
-
 
     def include(self, value):
         """
@@ -67,15 +61,15 @@ class LinkedList:
                 else:
                     return True
             else:
-                if(value==current.value):
+                if(value == current.value):
                     return True
                 else:
                     return False
 
-    def insertAfter(self,value,newVal):
+    def insertAfter(self, value, newVal):
         current = self.head
         while current is not None:
-            if value==current.value:
+            if value == current.value:
                 break
             current = current.next
         if current is None:
@@ -84,32 +78,29 @@ class LinkedList:
             node = Node(newVal)
             node.next = current.next
             current.next = node
-        
-    def insertBefore(self,value,newVal):
+
+    def insertBefore(self, value, newVal):
         if self.head is None:
             raise ValueError("Linked List is empty!")
-        if self.head.value==value:
+        if self.head.value == value:
             node = Node(newVal)
             node.next = self.head
             self.head = node
             return
         current = self.head
         while current.next is not None:
-            print(current.next.value)      
+            print(current.next.value)
             if current.next.value == value:
                 break
-            current = current.next  
+            current = current.next
         if current.next is None:
             raise ValueError("Node is not found!")
         else:
             node = Node(newVal)
             node.next = current.next
-            current.next = node     
+            current.next = node
 
-
-    
-
-    def getNth (self,value):
+    def getNth(self, value):
         try:
             current = self.head
             valuesarr = []
@@ -124,10 +115,6 @@ class LinkedList:
             return 'out of range'
 
 
-
- 
-
-
     def __str__(self):
         # "{ a } -> { b } -> { c } -> NULL"
         # Loop over all nodes
@@ -135,31 +122,25 @@ class LinkedList:
         current = self.head
         if not current:
             return 'None'
-        else :
-            res=''
+        else:
+            res = ''
             while current.next != None:
-                res=  res + '{' + str(current.value) +  '}' + '->' 
+                res = res + '{' + str(current.value) + '}' + '->'
                 current = current.next
             else:
-                 res += '{' + str(current.value) +  '}' +  '->' + 'None' 
+                res += '{' + str(current.value) + '}' + '->' + 'None'
             return res
-
 
     def __repr__(self):
         pass
-
-
-
-
 
 if __name__ == "__main__":
     # Instances of Node
     n1 = Node(35)
     n2 = Node('Sewar')
     n3 = Node(True)
-    
+
     # print(n2.value)
-    
 
     ll = LinkedList()
     ll.append(4)
