@@ -1,6 +1,6 @@
-from stack_and_queue.stack_and_queue import Node,Stack,Queue
+from stack_and_queue.stack_and_queue import Stack,Queue
 from stack_and_queue import __version__
-import pytest
+
 
 def test_version():
     assert __version__ == '0.1.0'
