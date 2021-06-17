@@ -15,15 +15,17 @@ class Stack:
        try:
            temp=self.top
            self.top = self.top.next
-           self.top.next = None
+           self.top.next == None
            return temp.value
        except:
            return 'Stack is Empty'
 
            
     def peek(self):
-
-        return self.top.value
+        try:
+            return self.top.value
+        except:
+            return 'is empty'
 
     def is_empty(self): 
         return self.top == None
@@ -67,7 +69,10 @@ class Queue:
             return('Queue is Empty')
 
     def peek(self):
-        return self.front.value
+        try:
+             return self.front.value
+        except:
+            return 'is empty'
 
     def is_empty(self):
         return self.front==None

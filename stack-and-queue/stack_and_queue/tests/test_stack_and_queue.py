@@ -35,6 +35,12 @@ def test_peek():
     actual = stack.top.value
     expected = 'd'
     assert actual == expected
+    stack.push(3)
+    stack.push(-7)
+    stack.push('d')
+    actual = stack.top.value
+    expected = -7
+    assert actual == expected
 
 def test_is_empty():
     stack = Stack()
@@ -44,15 +50,34 @@ def test_is_empty():
     assert actual == expected
 
 
-def test_enqueue(queue_vals):
-    assert queue_vals.rear.value == 6
-    assert queue_vals.front.value == 8
+def test_enqueue():
+    queue = Queue()
+    queue.enqueue(8)
+    queue.enqueue('hi')
+    queue.enqueue(-4)
+    queue.enqueue(6)
+    actual = queue.front.value
+    expected = 8
+    assert actual == expected
+    actual = queue.rear.value
+    expected = 6
+    assert actual == expected
 
 def test_dequeue():
     queue=Queue()
     queue.enqueue(1)
     queue.enqueue(2)
     queue.enqueue(3)
+    queue.dequeue()
+    actual = queue.front.value
+    expected = 2
+    assert actual == expected
+def test_dequeue1():
+    queue=Queue()
+    queue.enqueue(1)
+    queue.enqueue(2)
+    queue.enqueue(3)
+    queue.enqueue(4)
     queue.dequeue()
     actual = queue.front.value
     expected = 2
@@ -80,12 +105,4 @@ def test_is_empty():
 R
 """
 
-# Decorator
-@pytest.fixture
-def queue_vals():
-    queue = Queue()
-    queue.enqueue(8)
-    queue.enqueue('hi')
-    queue.enqueue(-4)
-    queue.enqueue(6)
-    return queue
+
