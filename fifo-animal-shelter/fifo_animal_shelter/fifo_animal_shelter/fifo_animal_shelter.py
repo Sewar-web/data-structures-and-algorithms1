@@ -43,9 +43,6 @@ class Queue:
 
 
 class AnimalShelter:
-    """
-    A class to adopt or donate animals (Cat's & Dog's)
-    """
 
     def __init__(self):
         self.front = None
