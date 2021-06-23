@@ -1,114 +1,47 @@
-
 class Node:
-    def __init__(self, value):
-        self.value = value
-        self.next = None
-        
-
-
+  def __init__(self, val, next_node = None):
+    self.value = val
+    self.next = next_node
 class Stack:
-    def __init__(self):
-        self.top = None
+  def __init__(self, top = None):
+    self.top = top
 
-    def push(self, value):
-        node = Node(value)
-        node.next = self.top
-        self.top = node
-        
-    def pop(self):
-       try:
-            temp=self.top
-            if temp:
-                    self.top = self.top.next
-                    self.top.next == None
-                    return temp.value
-            else:
-                    raise Exception ('Stack is Empty')
-       except:
-           return 'Stack is Empty'
+  def push(self, value):
+    new_top = Node(value, self.top)
+    self.top = new_top
 
-           
-    def peek(self):
+  def pop(self):
+    if not isinstance(self.top, Node):
+      raise EmptyListError
+    removed = self.top
+    self.top = self.top.next
+    return removed.value
 
-        try:
+  def peek(self):
+    if isinstance(self.top, Node):
+      return self.top.value
+    raise EmptyListError
 
-            if self.top:
-                 return self.top.value
-            else:
-                raise Exception ('Stack is Empty')
+  def is_empty(self):
+    if self.top:
+      return False
+    return True
 
-        except:
-            return 'is empty'
+class EmptyListError(AssertionError):
+  pass
 
-    def is_empty(self): 
-        return self.top == None
+class Pseudo_Queue:
+  def __init__(self):
+    self.stack = Stack()
 
+  def enqueue(self, val):
+    self.stack.push(val)
 
-class Queue:
-    def __init__(self):
-        self.front = None
-        self.rear = None
-    def enqueue(self, value):
-        node = Node(value)
-        if not self.rear:
-            self.front = node
-            self.rear = node
-        else:
-            self.rear.next = node
-            self.rear = node
-
-    def dequeue(self):
-
-        try:
-            if self.front:
-                temp = self.front
-                temp2 = temp.next
-                self.front = temp2
-                return temp.value
-            else:
-                 raise Exception ('Queue is Empty')
-        except:
-            return('Queue is Empty')
-
-    def peek(self):
-        try:
-            if self.front:
-                return self.front.value
-            else:
-                raise Exception ('Queue is Empty')
-        except:
-            return 'is empty'
-
-    def is_empty(self):
-        return self.front==None
-
-
-#//////////////////////////////////////// code challenge 11 /////////////////////////////////////////////////////#    
-
-class PseudoQueue():
-    def __init__(self):
-        self.front = Stack()
-        self.back = Stack()
-
-    def enqueue(self, value):
-        return self.front.push(value)
-
-    def dequeue(self):
-        return self.front.pop()
-
-
-    
-if __name__ == "__main__":
-    pseudo = PseudoQueue()
-    pseudo.enqueue(1)
-    pseudo.enqueue(2)
-    pseudo.enqueue(3)
-    pseudo.enqueue(4)
-    print(pseudo.front.top.value)
-    print(pseudo.dequeue())
-    pseudo.enqueue(7)
-    print(pseudo.front.top.value)
-    print(pseudo.dequeue())
- 
-
-
+  def dequeue(self):
+    rev_stack = Stack()
+    while self.stack.top:
+      rev_stack.push(self.stack.pop())
+    removed = rev_stack.pop()
+    while rev_stack.top:
+      self.enqueue(rev_stack.pop())
+    return removed
