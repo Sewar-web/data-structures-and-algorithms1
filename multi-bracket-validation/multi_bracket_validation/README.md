@@ -3,7 +3,9 @@
 The function should take a string only argument and should return a boolean representing whether or not the brackets in the string are balanced.
 
 ## Whiteboard Process
-  ![img](Cc13.png)
+
+![img](../code.png)
+
 ## Approach & Efficiency
   * Big O =>
      -  time => O(1)
