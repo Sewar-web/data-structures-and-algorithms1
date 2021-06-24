@@ -1,23 +1,21 @@
-
 def multi_bracket_validation(strings):
-
-    arr = []
-    obj = { '(':')', '[':']', '{':'}' }
-
-    for x in strings:
-        if (x == '(' or x == '{' or x == '['):
-            arr.append(x)
-        elif x in obj.values():
-            if len(arr) == 0:
+      
+    open = tuple('({[')
+    close = tuple(')}]')
+    map = dict(zip(open, close))
+    arr_multi = []
+    for i in strings:
+        if i in open:
+            arr_multi.append(map[i])
+        elif i in close:
+            if not arr_multi or i != arr_multi.pop():
                 return False
-            item = arr.pop()
-            if x != obj[item]:
-                return False
-
-    if len(arr) != 0:
+    if not arr_multi:
+        return True
+    else:
         return False
-    
-    return True
+
+
 
 if __name__ == "__main__":
     print(multi_bracket_validation('(){}'))
