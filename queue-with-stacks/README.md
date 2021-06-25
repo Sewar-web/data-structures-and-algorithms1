@@ -4,7 +4,6 @@ define  class PseudoQueue take tow method to add value and delete value  using t
 
 ## Whiteboard Process
 ![img](codequ.png)
-
 ## Approach & Efficiency
 o(1)
 
