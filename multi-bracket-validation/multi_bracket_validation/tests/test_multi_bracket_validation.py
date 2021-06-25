@@ -6,7 +6,7 @@ def test_version():
     assert __version__ == '0.1.0'
 
 def test_multi_bracket_validation():
-    actual = multi_bracket_validation('(){}')
+    actual = multi_bracket_validation('()[[Extra Characters]]')
     expected = True
     assert actual == expected
 
