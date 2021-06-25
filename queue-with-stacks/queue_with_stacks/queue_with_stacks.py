@@ -1,4 +1,3 @@
-
 class Node:
     def __init__(self, value):
         self.value = value
@@ -88,14 +87,25 @@ class Queue:
 class PseudoQueue():
     def __init__(self):
         self.front = Stack()
-        self.back = Stack()
+        self.rear=Stack()
 
     def enqueue(self, value):
         return self.front.push(value)
 
     def dequeue(self):
-        return self.front.pop()
+     
+       if  self.rear.is_empty():
+            while self.front.top :
+                push=self.rear.push
+                push(self.front.pop())
+       return self.rear.pop()
+    
 
+
+
+
+
+      
 
     
 if __name__ == "__main__":
@@ -104,11 +114,9 @@ if __name__ == "__main__":
     pseudo.enqueue(2)
     pseudo.enqueue(3)
     pseudo.enqueue(4)
-    print(pseudo.front.top.value)
-    print(pseudo.dequeue())
+    print('front---------      ',pseudo.front.top.value)
+    print('dequeue1--------    ', pseudo.dequeue())
     pseudo.enqueue(7)
-    print(pseudo.front.top.value)
-    print(pseudo.dequeue())
- 
-
-
+    print('add-------------    ',pseudo.front.top.value)
+    print('dequeue2--------    ' ,pseudo.dequeue())
+    print('dequeue3---------    '  ,   pseudo.dequeue())
