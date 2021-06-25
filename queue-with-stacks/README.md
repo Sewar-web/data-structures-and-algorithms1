@@ -17,4 +17,3 @@ o(1)
    * print(pseudo.dequeue()) =>stack is empty 
    * print(pseudo.front.top.value) =>4
    * print(pseudo.dequeue()) =>2
-
