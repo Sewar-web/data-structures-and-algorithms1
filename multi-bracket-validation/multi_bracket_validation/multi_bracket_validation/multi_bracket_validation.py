@@ -1,9 +1,10 @@
 def multi_bracket_validation(strings):
       
     open = tuple('({[')
-    close = tuple(')}]')
-    map = dict(zip(open, close))
-    arr_multi = []
+    close = tuple(')}]') 
+    map = dict(zip(open, close)) 
+    # print(map)
+    arr_multi = [] 
     for i in strings:
         if i in open:
             arr_multi.append(map[i])
