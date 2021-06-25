@@ -112,69 +112,66 @@ class LinkedList:
     def __repr__(self):
         pass
 
-def zipLists(ll1,ll2):
+def zip_ll(ll1,ll2):
 
-    i =0
-    j =0
-    current1 = ll1.head
-    current2 = ll2.head
+    x =0
+    y =0
+    curr = ll1.head
+    curr1 = ll2.head
 
-    while current1:
-        i += 1
-        current1 = current1.next
-        if current1 == None:
+    while curr:
+        x += 1
+        curr = curr.next
+        if curr == None:
             break 
-    while current2:
-        j += 1
-        current2 = current2.next
-        if current2 == None:
+    while curr1:
+        y += 1
+        curr1 = curr1.next
+        if curr1 == None:
             break 
 
-    if j <= i:
-        current1 = ll1.head
-        current2 = ll2.head
+    if y <= x:
+        curr = ll1.head
+        curr1 = ll2.head
 
-    if i < j:
+    if x < y:
         head = ll2.head.value
-        current1 = ll2.head
-        current2 = ll1.head
+        curr = ll2.head
+        curr1 = ll1.head
 
 
-    while current1 != None or current2 != None:
+    while curr != None or curr1 != None:
 
-        if current2 != None:
-            temp = current1.next
-            temp2 = current2.next
-            current1.next = current2
-            current1 = current1.next
+        if curr1 != None:
+            temp = curr.next
+            temp1 = curr1.next
+            curr.next = curr1
+            curr = curr.next
             if temp != None:
-                current1.next = temp
-                current1 = current1.next
-            current2 = temp2
+                curr.next = temp
+                curr = curr.next
+            curr1 = temp1
         
 
-        if current1.next == None and current2 == None:
-            current1 = current1.next
+        if curr.next == None and curr1 == None:
+            curr = curr.next
 
-        if current1 == None:
-            if i < j:
+        if curr == None:
+            if x < y:
                 ll1.insert(head)
             return ll1
 
 if __name__ == "__main__":
     ll1=LinkedList()
-    ll1.append(1)
-    ll1.append(3)
-    ll1.append(2)
-
+    ll1.append(15)
+    ll1.append(13)
+    ll1.append(17)
     print(ll1)
 
     ll2=LinkedList()
-    ll2.append(5)
-    ll2.append(9)
-    ll2.append(4)
-    ll2.append(8)
-
+    ll2.append(10)
+    ll2.append(20)
+    ll2.append(30)
     print(ll2)
 
-    print(zipLists(ll1,ll2))
+    print(zip_ll(ll1,ll2))

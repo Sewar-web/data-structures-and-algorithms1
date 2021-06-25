@@ -1,41 +1,32 @@
-import pytest
+from ll_zip.ll_zip import LinkedList ,zip_ll
 from ll_zip import __version__
-from ll_zip.ll_zip import LinkedList
-from ll_zip.ll_zip import zipLists 
 
 def test_version():
     assert __version__ == '0.1.0'
 
 
-def test_ll_zip_1(fixed_list_1,fixed_list_2):
-    fixed_list_1.append(2)
-    fixed_list_2.append(4)
-    assert str(zipLists(fixed_list_1,fixed_list_2)) == '{1}->{5}->{3}->{9}->{2}->{4}->None'
-
-
-def test_ll_zip_2(fixed_list_1,fixed_list_2):
-    fixed_list_2.append(4)
-    assert str(zipLists(fixed_list_1,fixed_list_2)) == '{5}->{1}->{9}->{3}->{4}->None'
-
-
-
-def test_ll_zip_3(fixed_list_1,fixed_list_2):
-    fixed_list_1.append(2)
-    assert str(zipLists(fixed_list_1,fixed_list_2)) == '{1}->{5}->{3}->{9}->{2}->None'
-
-
-@pytest.fixture
-def fixed_list_1():
+def test_zip_one():
     ll1=LinkedList()
-    ll1.append(1)
-    ll1.append(3)
-    
-    return ll1 
-
-@pytest.fixture
-def fixed_list_2():
+    ll1.append(5)
+    ll1.append(7)
+    ll1.append(0)
     ll2=LinkedList()
-    ll2.append(5)
-    ll2.append(9)
+    ll2.append(15)
+    ll2.append(17)
+    expect='{5}->{15}->{7}->{17}->{0}->None'
+    actuall=str(zip_ll(ll1 ,ll2))
+    assert actuall==expect
 
-    return ll2
+
+def test_zip_tow():
+    ll1=LinkedList()
+    ll1.append(5)
+    ll1.append(7)
+    ll2=LinkedList()
+    ll2.append(15)
+    ll2.append(17)
+    expect='{5}->{15}->{7}->{17}->None'
+    actuall=str(zip_ll(ll1 ,ll2))
+    assert actuall==expect
+
+
