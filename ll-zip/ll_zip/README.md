@@ -2,7 +2,7 @@
 write  function take tow argument for linked list to merge elment of list1 with list 2 one by one
 
 ## Whiteboard Process
-![img](../code8.png)
+![img](code8.png)
 ## Approach & Efficiency
 big o of time is O(1)
 
