@@ -4,22 +4,23 @@ class Node:
         self.left = None
         self.right = None
 
-class Tree:
+class Binary_Tree:
     def __init__(self):
         self.root = None
-        # self.max=0
+    
     
 
     def pre_order(self):
+        output = []
         try: 
-            output = ''
+            
             if not self.root:
                 return output
 
 
             def _traverse(node):
                 nonlocal output # Because output is not accessible
-                output = output + str(node.value) # Root
+                output.append(node.value) # Root
 
                 if node.left:
                     _traverse(node.left)
@@ -35,8 +36,9 @@ class Tree:
 
 
     def in_order(self):
+        output = []
         try:
-            output = ''
+            
             if not self.root:
                 return output
 
@@ -44,7 +46,7 @@ class Tree:
                 nonlocal output
                 if node.left:
                     _traverse(node.left)
-                output = output + str(node.value)
+                output.append(node.value)
                 if node.right:
                     _traverse(node.right)
                 return output
@@ -55,8 +57,8 @@ class Tree:
 
 
     def post_order(self):
+       output = []
        try:
-            output = ''
             if not self.root:
                 return output
             def _traverse(node):
@@ -66,10 +68,9 @@ class Tree:
                     _traverse(node.left)
                 if node.right:
                     _traverse(node.right)
-                output = output + str(node.value)
+                output.append(node.value)
                 return output
             _traverse(self.root)
-
             return output
        except:
             return "you have error with insertion by post_order"
@@ -100,7 +101,7 @@ class Tree:
   
 
 
-class Binary_Search_Tree(Tree):
+class Binary_Search_Tree(Binary_Tree):
 
     def __init__(self):
         super().__init__()
@@ -190,7 +191,7 @@ if __name__=='__main__':
     print(tree.post_order())
 
 
-    max=Tree()
+    max=Binary_Tree()
     max.root = Node(10)
     max.root.right = Node(15)
     max.root.left = Node(11)

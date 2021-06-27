@@ -1,4 +1,4 @@
-from tree.tree import Node ,Tree , Binary_Search_Tree
+from tree.tree import Node ,Binary_Tree , Binary_Search_Tree
 from tree import __version__
 
 
@@ -15,32 +15,32 @@ def test_version():
 
 
 def test_pre_order(prepared_tree):
-    assert prepared_tree.pre_order() == 'ABDECF'
+    assert prepared_tree.pre_order() == ['A', 'B', 'D', 'E', 'C', 'F']
 
 
 def test_pre_order_empty_tree():
-    tree = Tree()
-    assert tree.pre_order() == ''
+    tree = Binary_Tree()
+    assert tree.pre_order() == []
 
 #////////////////////////////////////in_order/////////////////////////////////////////////
 
 def test_in_order(prepared_tree):
-    assert prepared_tree.in_order() == 'DBEAFC'
+    assert prepared_tree.in_order() == ['D', 'B', 'E', 'A', 'F', 'C']
 
 def test_in_order_empty_tree():
-    tree = Tree()
-    assert tree.in_order() == ''
+    tree = Binary_Tree()
+    assert tree.in_order() == []
 
 
 #////////////////////////////////////post_order/////////////////////////////////////////////
 
 
 def test_post_order(prepared_tree):
-    assert prepared_tree.post_order() == 'DEBFCA'
+    assert prepared_tree.post_order() == ['D', 'E', 'B', 'F', 'C', 'A']
 
 def test_post_order_empty_tree():
-    tree = Tree()
-    assert tree.post_order() == ''
+    tree = Binary_Tree()
+    assert tree.post_order() == []
 
 #////////////////////////////////////BTS/////////////////////////////////////////////
 
@@ -57,9 +57,9 @@ def test_BST():
     tree.Add(4)
     tree.Add(12)
     tree.Add(0)
-    assert tree.pre_order()=='510410712'
-    assert tree.in_order()=='014571012'
-    assert tree.post_order()=='041712105'
+    assert tree.pre_order()==[5, 1, 0, 4, 10, 7, 12]
+    assert tree.in_order()==[0, 1, 4, 5, 7, 10, 12]
+    assert tree.post_order()==[0, 4, 1, 7, 12, 10, 5]
 
 
 #////////////////////////////////////BTS_Add/////////////////////////////////////////////
@@ -107,17 +107,17 @@ def test_BST_Contains():
 
 
 def test_tree_empty():
-    tree = Tree()
-    assert tree.pre_order() == ''
-    assert tree.in_order() == ''
-    assert tree.post_order() == ''
+    tree = Binary_Tree()
+    assert tree.pre_order() ==[]
+    assert tree.in_order() ==[]
+    assert tree.post_order() == []
 
 
 
 #////////////////////////////////////Max_Value/////////////////////////////////////////////
 
 def test_max_value():
-    max=Tree()
+    max=Binary_Tree()
     max.root = Node(10)
     max.root.right = Node(15)
     max.root.left = Node(11)
@@ -135,7 +135,7 @@ def test_max_value():
 
 @pytest.fixture
 def prepared_tree():
-    tree = Tree()
+    tree = Binary_Tree()
     tree.root = Node('A')
     tree.root.left = Node('B')
     tree.root.right = Node('C')
