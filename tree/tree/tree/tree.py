@@ -7,6 +7,8 @@ class Node:
 class Tree:
     def __init__(self):
         self.root = None
+        # self.max=0
+    
 
     def pre_order(self):
         try: 
@@ -72,7 +74,30 @@ class Tree:
        except:
             return "you have error with insertion by post_order"
 
+    def max_value(self):
+    
+        self.node=self.root
+        self.max=self.root.value
 
+        try:
+            def _max(node):
+                if self.max < node.value:
+                    self.max=node.value
+
+                if node.right:
+                    _max(node.right)
+                
+                if node.left:
+                    _max(node.left)
+                
+            _max(self.node)
+            return self.max
+            
+        except:
+            return "you have an error"
+       
+
+  
 
 
 class Binary_Search_Tree(Tree):
@@ -153,6 +178,7 @@ if __name__=='__main__':
     tree.Add(4)
     tree.Add(12)
     tree.Add(0)
+    tree.Add(50)
 
     print(tree.Contains(5))
     print(tree.Contains(30))
@@ -162,3 +188,13 @@ if __name__=='__main__':
     print(tree.pre_order())
     print(tree.in_order())
     print(tree.post_order())
+
+
+    max=Tree()
+    max.root = Node(10)
+    max.root.right = Node(15)
+    max.root.left = Node(11)
+    max.root.right.left = Node(17)
+    max.root.left.left = Node(20)
+    max.root.right.right = Node(3)
+    print(max.max_value())

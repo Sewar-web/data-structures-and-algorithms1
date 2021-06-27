@@ -88,7 +88,7 @@ def test_BST_Add():
 
 
 def test_BST_Contains():
-    tree = Binary_Search_Tree()
+
     tree = Binary_Search_Tree()
     tree.Add(5)
     tree.Add(10)
@@ -103,7 +103,7 @@ def test_BST_Contains():
     assert tree.Contains(12) == True
 
 
-#////////////////////////////////////BTS_is_empty/////////////////////////////////////////////
+#////////////////////////////////////Tree_is_empty/////////////////////////////////////////////
 
 
 def test_tree_empty():
@@ -111,6 +111,21 @@ def test_tree_empty():
     assert tree.pre_order() == ''
     assert tree.in_order() == ''
     assert tree.post_order() == ''
+
+
+
+#////////////////////////////////////Max_Value/////////////////////////////////////////////
+
+def test_max_value():
+    max=Tree()
+    max.root = Node(10)
+    max.root.right = Node(15)
+    max.root.left = Node(11)
+    max.root.right.left = Node(17)
+    max.root.left.left = Node(20)
+    max.root.right.right = Node(3)
+    assert max.max_value() == 20
+
 
 
 

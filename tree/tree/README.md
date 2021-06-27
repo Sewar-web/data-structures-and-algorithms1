@@ -34,4 +34,27 @@ and inside tree we define 3 method and this methos is type of tree and how inser
 
 and the last class is BST is inhetr from tree 
 and i write to methos one to add in tree in right way like from root and if lessthan root go insert in left node other wise go in right node and the same methodology for method Contains but this method return true or false if the value in tree or not 
- 
+
+
+
+<!-- ////////////////////////////////////code challenge 16////////////////////////////////////////////// -->
+
+ # Challenge Summary
+write method to find the maximum value stored in the tree
+    
+
+## Whiteboard Process
+![img](code16.png)
+
+## Approach & Efficiency
+search in all tree
+## Solution
+
+* max=Tree()
+* max.root = Node(10)
+* max.root.right = Node(15)
+* max.root.left = Node(11)
+* max.root.right.left = Node(17)
+* max.root.left.left = Node(20)
+* max.root.right.right = Node(3)
+* return ==> 20
