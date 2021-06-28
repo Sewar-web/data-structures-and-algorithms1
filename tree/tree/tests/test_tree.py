@@ -128,6 +128,19 @@ def test_max_value():
 
 
 
+#///////////////////////////////////////////////breadth_first///////////////////
+
+    breadth=Binary_Tree()
+    breadth.root = Node(1)
+    breadth.root.left = Node(2)
+    breadth.root.right = Node(3)
+    breadth.root.left.left = Node(4)
+    breadth.root.right.left = Node(5)
+    breadth.root.right.right = Node(6)
+    assert breadth.breadth_first(breadth)==[1,2,3,4,5,6]
+
+
+
 
 
 

@@ -97,8 +97,32 @@ class Binary_Tree:
         except:
             return "you have an error"
        
-
+#///////////////////////////////////code challenge 17 ////////////////////////////////////////////
   
+    def breadth_first(self , tree):
+
+        queue=[]
+        output=[]
+        
+        if self.root:
+            queue.append(self.root) 
+            while queue:
+                    node = queue.pop(0)
+                    output.append(node.value)
+
+                    if node.left is not None:
+                        queue.append(node.left)
+
+                    if node.right is not None:
+                        queue.append(node.right)
+
+                    
+                
+            return output
+        else:
+            return 'the tree is empty '
+
+
 
 
 class Binary_Search_Tree(Binary_Tree):
@@ -199,3 +223,21 @@ if __name__=='__main__':
     max.root.left.left = Node(20)
     max.root.right.right = Node(3)
     print(max.max_value())
+
+
+    print('#////////////////////////////////////////////////////////////////////////////////////////////////////')
+
+    breadth=Binary_Tree()
+    breadth.root = Node(1)
+    breadth.root.left = Node(2)
+    breadth.root.right = Node(3)
+    breadth.root.left.left = Node(4)
+    breadth.root.right.left = Node(5)
+    breadth.root.right.right = Node(6)
+    print(breadth.breadth_first(breadth))
+
+
+
+
+
+
