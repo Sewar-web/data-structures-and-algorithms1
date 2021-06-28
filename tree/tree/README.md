@@ -1,3 +1,55 @@
+<!-- ////////////////////////////////////code challenge 17////////////////////////////////////////////// -->
+
+ # Challenge Summary
+write method to breadth first to return  the number level by level
+    
+
+## Whiteboard Process
+![img](code17.png)
+
+## Approach & Efficiency
+big(o) => o(n)
+
+## Solution
+
+*   breadth=Binary_Tree()
+*   breadth.root = Node(1)
+*   breadth.root.left = Node(2)
+*   breadth.root.right = Node(3)
+*   breadth.root.left.left = Node(4)
+*   breadth.root.right.left = Node(5)
+*   breadth.root.right.right = Node(6)
+*   print(breadth.breadth_first(breadth))
+ - return => [1,2,3,4,5,6]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ////////////////////////////////////code challenge 15////////////////////////////////////////////// -->
 # Trees
 * Tree => Tree represents the nodes connected by edges. It is a non-linear data structure. It has the following properties −
 
