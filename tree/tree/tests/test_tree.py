@@ -1,4 +1,4 @@
-from tree.tree import Node ,Binary_Tree , Binary_Search_Tree
+from tree.tree import Node ,Binary_Tree , Binary_Search_Tree ,fizzbuzz,Fizz_Buzz_Tree
 from tree import __version__
 
 
@@ -128,7 +128,7 @@ def test_max_value():
 
 
 
-#///////////////////////////////////////////////breadth_first///////////////////
+#///////////////////////////////////////////////breadth_first//////////////////////////////////
 
     breadth=Binary_Tree()
     breadth.root = Node(1)
@@ -138,6 +138,24 @@ def test_max_value():
     breadth.root.right.left = Node(5)
     breadth.root.right.right = Node(6)
     assert breadth.breadth_first(breadth)==[1,2,3,4,5,6]
+
+
+#///////////////////////////////////////////////Fizz_Buzz/////////////////////////////////////////
+
+def test_fizz_buzz():
+    fizzBuzz = Binary_Tree()
+    fizzBuzz.root = Node(1)
+    fizzBuzz.root.left = Node(5)
+    fizzBuzz.root.right = Node(25)
+    fizzBuzz.root.left.left = Node(2)
+    fizzBuzz.root.left.right = Node(18)
+    fizzBuzz.root.right.right = Node(15)
+
+    assert Fizz_Buzz_Tree(fizzBuzz).pre_order()== ['1', 'Buzz', '2', 'Fizz', 'Buzz', 'FizzBuzz']
+    assert Fizz_Buzz_Tree(fizzBuzz).in_order()== ['2', 'Buzz', 'Fizz', '1', 'Buzz', 'FizzBuzz']
+    assert Fizz_Buzz_Tree(fizzBuzz).post_order()==['2', 'Fizz', 'Buzz', 'FizzBuzz', 'Buzz', '1']
+    
+
 
 
 
