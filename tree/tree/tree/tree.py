@@ -122,8 +122,44 @@ class Binary_Tree:
         else:
             return 'the tree is empty '
 
+#//////////////////////////////////////////////code challenge 18/////////////////////////////////////////////
+
+def fizzbuzz(n):
+
+    if n % 3 == 0 and n % 5 == 0:
+        return 'FizzBuzz'
+    elif n % 3 == 0:
+        return 'Fizz'
+    elif n % 5 == 0:
+        return 'Buzz'
+    else:
+        return str(n)
+
+def Fizz_Buzz_Tree(k_ary):
+
+    tree = Binary_Tree()
+
+    if  k_ary.root==True:
+         return tree
+
+    def _tree(current):
+
+        node = Node(fizzbuzz(current.value))
+
+        if current.left:
+            node.left = _tree(current.left)
+        if current.right:
+            node.right = _tree(current.right)
+        return node
+
+    tree.root = _tree(k_ary.root)
+    return tree
+
+    
 
 
+
+#///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Binary_Search_Tree(Binary_Tree):
 
@@ -193,6 +229,8 @@ class Binary_Search_Tree(Binary_Tree):
             return "you have error value"
 
 
+
+
 if __name__=='__main__':
     tree = Binary_Search_Tree()
     tree.Add(5)
@@ -209,12 +247,14 @@ if __name__=='__main__':
     print(tree.Contains(30))
     print(tree.Contains(12))
 
-
+    print('\n')
+    print('/'*50)
     print(tree.pre_order())
     print(tree.in_order())
     print(tree.post_order())
 
-
+    print('\n')
+    print('/'*50) 
     max=Binary_Tree()
     max.root = Node(10)
     max.root.right = Node(15)
@@ -224,9 +264,8 @@ if __name__=='__main__':
     max.root.right.right = Node(3)
     print(max.max_value())
 
-
-    print('#////////////////////////////////////////////////////////////////////////////////////////////////////')
-
+    print('\n')
+    print('/'*50)
     breadth=Binary_Tree()
     breadth.root = Node(1)
     breadth.root.left = Node(2)
@@ -235,6 +274,24 @@ if __name__=='__main__':
     breadth.root.right.left = Node(5)
     breadth.root.right.right = Node(6)
     print(breadth.breadth_first(breadth))
+
+    
+    print('\n')
+    print('/'*50)
+
+
+
+    fizzBuzz = Binary_Tree()
+    fizzBuzz.root = Node(1)
+    fizzBuzz.root.left = Node(5)
+    fizzBuzz.root.right = Node(25)
+    fizzBuzz.root.left.left = Node(2)
+    fizzBuzz.root.left.right = Node(18)
+    fizzBuzz.root.right.right = Node(15)
+    print(Fizz_Buzz_Tree(fizzBuzz).pre_order())
+    print(Fizz_Buzz_Tree(fizzBuzz).in_order())
+    print(Fizz_Buzz_Tree(fizzBuzz).post_order())
+
 
 
 

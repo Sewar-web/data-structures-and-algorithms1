@@ -1,3 +1,35 @@
+<!-- ////////////////////////////////////code challenge 18 ////////////////////////////////////////////// -->
+
+ # Challenge Summary
+
+
+
+write function fizz_buzz_tree to check on node tree if the number division by 3 return fizz and if division by 5 return buzz else return str(number)
+    
+
+## Whiteboard Process
+![img](code18.png)
+
+## Approach & Efficiency
+big(o) => o(n)
+
+## Solution
+
+*   fizzBuzz = Binary_Tree()
+*   fizzBuzz.root = Node(1)
+*   fizzBuzz.root.left = Node(5)
+*    fizzBuzz.root.right = Node(25)
+*   fizzBuzz.root.left.left = Node(2)
+*   fizzBuzz.root.left.right = Node(18)
+*   fizzBuzz.root.right.right = Node(15)
+*   print(Fizz_Buzz_Tree(fizzBuzz).pre_order())
+*  return => ['1', 'Buzz', '2', 'Fizz', 'Buzz', 'FizzBuzz']
+
+
+
+
+
+
 <!-- ////////////////////////////////////code challenge 17////////////////////////////////////////////// -->
 
  # Challenge Summary
