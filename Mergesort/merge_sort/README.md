@@ -1,3 +1,20 @@
+# Challenge Summary
+write function mergesort that take array as parameter and sort this array and merge it
+
+
+
+## Whiteboard Process
+![img](code27.png)
+
+## Approach & Efficiency
+
+* Time: O(n^2)
+* Space: O(n)
+
+## Solution
+
+
+```
 def Mergesort(arr):
     n= len(arr)
 
@@ -37,27 +54,5 @@ def Merge(left, right, arr):
         arr[k] = right[j]
         j += 1
         k += 1
-
-
-
-if __name__ == "__main__":
-    merge = [8,4,23,42,16,15]
-    Mergesort(merge)
-    print(merge)
-
-
-    merge2 = [20,18,12,8,5,-2]
-    Mergesort(merge2)
-    print(merge2)
-
-
-    merge3 = [5,12,7,5,5,7]
-    Mergesort(merge3)
-    print(merge3)
-
-
-    merge4 =[2,3,5,7,13,11]
-    Mergesort(merge4)
-    print(merge4)
-
+```
 

@@ -1,3 +1,4 @@
+```
 def Mergesort(arr):
     n= len(arr)
 
@@ -39,25 +40,25 @@ def Merge(left, right, arr):
         k += 1
 
 
-
-if __name__ == "__main__":
-    merge = [8,4,23,42,16,15]
-    Mergesort(merge)
-    print(merge)
+````
 
 
-    merge2 = [20,18,12,8,5,-2]
-    Mergesort(merge2)
-    print(merge2)
+Trace [8,4,23,15]
+
+mid=2
+left = 8,4
+right =23,15
 
 
-    merge3 = [5,12,7,5,5,7]
-    Mergesort(merge3)
-    print(merge3)
+**Pass 1**
 
 
-    merge4 =[2,3,5,7,13,11]
-    Mergesort(merge4)
-    print(merge4)
+In the first pass to combine the selection, we divide the array into two parts: left and right. We start from the left. If the number is less than the second, we save the first number with a variable and transfer the second to the first
 
 
+**Pass 2**
+In the first pass to combine the selection, we divide the array into two parts: left and right. We start from the left. If the number is less than the second, we save the first number with a variable and transfer the second to the first
+
+**Pass 3**
+
+Merge the two matrices together and make sure they are ordered
