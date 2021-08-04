@@ -15,6 +15,28 @@ def test_one():
     assert g.breadthFirst('a')==['a', 'd', 'c']
 
 
+def test_tow():
+    g = Graph()
+    g.addEdge('a', 'd')
+    g.addEdge('a', 'c')
+    g.addEdge('b', 'd')
+    g.addEdge('c', 'a')
+    g.addEdge('c', 'd')
+    g.addEdge('d', 'd')
+    assert g.breadthFirst('b')==['b', 'd']
+
+
+def test_three():
+    g = Graph()
+    g.addEdge('a', 'd')
+    g.addEdge('a', 'c')
+    g.addEdge('b', 'd')
+    g.addEdge('c', 'a')
+    g.addEdge('c', 'd')
+    g.addEdge('d', 'd')
+    assert g.breadthFirst('d')==['d']
+
+
 
 
 
